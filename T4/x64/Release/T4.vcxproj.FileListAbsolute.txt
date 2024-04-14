@@ -1,0 +1,2 @@
+C:\Users\uraan\Documents\Visual Studio\Projects\skool\x64\Release\T4.exe
+C:\Users\uraan\Documents\GitHub\Ohjelmoinnin-edistyneet-piirteet\T4\x64\Release\T4.exe

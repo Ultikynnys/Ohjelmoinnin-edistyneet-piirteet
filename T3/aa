@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+
+class Osoite {
+private:
+    std::string katuosoite;
+    std::string postinumero;
+    std::string kunta;
+
+public:
+    Osoite(const std::string& katuosoite_, const std::string& postinumero_, const std::string& kunta_)
+        : katuosoite(katuosoite_), postinumero(postinumero_), kunta(kunta_) {}
+
+    void setKatuosoite(const std::string& katuosoite_) { katuosoite = katuosoite_; }
+    void setPostinumero(const std::string& postinumero_) { postinumero = postinumero_; }
+    void setKunta(const std::string& kunta_) { kunta = kunta_; }
+
+    std::string getKatuosoite() const { return katuosoite; }
+    std::string getPostinumero() const { return postinumero; }
+    std::string getKunta() const { return kunta; }
+
+    void tulostaTiedot() const {
+        std::cout << "Katuosoite: " << katuosoite << "\nPostinumero: " << postinumero << "\nKunta: " << kunta << std::endl;
+    }
+};
+
+class Henkilo {
+private:
+    std::string nimi;
+    int ika;
+    Osoite osoite;
+
+public:
+    Henkilo(const std::string& nimi_, int ika_, const std::string& katuosoite_,
+            const std::string& postinumero_, const std::string& kunta_)
+        : nimi(nimi_), ika(ika_), osoite(katuosoite_, postinumero_, kunta_) {}
+
+    ~Henkilo() {
+        std::cout << "Henkilo object destroyed." << std::endl;
+    }
+
+    void SetNimi(const std::string& nimi_) { nimi = nimi_; }
+    void SetIka(int ika_) { ika = ika_; }
+    std::string GetNimi() const { return nimi; }
+    int GetIka() const { return ika; }
+
+    void TulostaHenkilonTiedot() const {
+        std::cout << "Nimi: " << nimi << "\nIka: " << ika << std::endl;
+        osoite.tulostaTiedot();
+    }
+};
+
+int main() {
+    Henkilo henkilo("Matti", 25, "Esimerkkikatu 123", "00100", "Esimerkkikunta");
+    henkilo.TulostaHenkilonTiedot();
+
+    return 0;
+}
