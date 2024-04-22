@@ -10,5 +10,5 @@
  Kaikki osiot suoritettu. T4 kansiosta löytyy tehtävän koodi
  
   ## Tehtävä 5
- Kaikki osiot suoritettu. T4 kansiosta löytyy tehtävän koodi
+ Kaikki osiot suoritettu. T5 kansiosta löytyy tehtävän koodi
  
